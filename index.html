@@ -2,172 +2,212 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🎉 Secret Level Unlocked — Wife Update vInfinity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wife Update vInfinity</title>
   <style>
-    :root{
-      --bg:#0b1020; /* deep space */
-      --fg:#ffffff;
-      --soft:#b8c7ff;
-      --accent:#ff7ac6; /* cute pink */
-      --card:#151b34;
-      --glow:0 0 20px rgba(255,122,198,.35);
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      background: linear-gradient(135deg, #0d0d2b, #1f1f5a);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
-      background: radial-gradient(1200px 800px at 70% -20%, #1a2250 0, var(--bg) 55%), var(--bg);
-      color:var(--fg);
-      overflow-x:hidden;
+    header {
+      padding: 2rem;
     }
-    .stars{
-      position:fixed; inset:0; pointer-events:none; z-index:0;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><circle cx="10" cy="10" r="1" fill="white"/><circle cx="50" cy="40" r="1" fill="white"/><circle cx="120" cy="20" r="1" fill="white"/><circle cx="90" cy="80" r="1" fill="white"/><circle cx="30" cy="120" r="1" fill="white"/><circle cx="140" cy="140" r="1" fill="white"/></svg>');
-      background-size:160px 160px;
-      opacity:.35;
-      animation: drift 60s linear infinite;
+    h1 {
+      font-size: 2.5rem;
+      color: #ffd700;
+      text-shadow: 0 0 10px #ff69b4;
     }
-    @keyframes drift{from{background-position:0 0}to{background-position:160px 160px}}
-
-    .container{
-      position:relative; z-index:1; max-width:880px; margin:0 auto; padding:48px 20px 96px;
-      display:flex; flex-direction:column; align-items:center; text-align:center;
+    pre {
+      text-align: left;
+      margin: 2rem auto;
+      max-width: 700px;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      line-height: 1.6;
+      font-size: 1rem;
     }
-    h1{
-      font-size: clamp(28px, 4vw, 48px);
-      margin: 12px 0 8px;
-      letter-spacing:.5px;
-      text-shadow: 0 2px 24px rgba(255,255,255,.08);
+    button {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 1rem;
+      background: #ff69b4;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
-    .subtitle{
-      color:var(--soft); opacity:.9; font-size: clamp(14px, 2.2vw, 18px);
+    button:hover {
+      transform: scale(1.1);
     }
-    .card{
-      margin-top:28px; background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:24px; box-shadow: var(--glow);
-      width: min(720px, 94vw);
+    #toast {
+      visibility: hidden;
+      min-width: 200px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 8px;
+      padding: 1rem;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
     }
-    .btns{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px}
-    button{
-      background:var(--accent); color:#0f0f18; border:none; padding:12px 16px; border-radius:14px;
-      font-weight:700; cursor:pointer; transition: transform .08s ease, box-shadow .2s ease; box-shadow:0 10px 30px rgba(255,122,198,.25)
+    #toast.show {
+      visibility: visible;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
     }
-    button:hover{transform:translateY(-1px)}
-    button:active{transform:translateY(1px)}
-
-    .patch{
-      text-align:left; background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px; margin-top:16px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:14px;
+    @keyframes fadein {
+      from { bottom: 0; opacity: 0; }
+      to { bottom: 30px; opacity: 1; }
     }
-    .k{color:#9fe5ff}
-    .v{color:#ffd1e8}
-
-    .ribbon{
-      display:inline-block; margin-top:14px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.06);
-      font-size:12px; color:var(--soft)
+    @keyframes fadeout {
+      from { bottom: 30px; opacity: 1; }
+      to { bottom: 0; opacity: 0; }
     }
-
-    .hearts{ position:fixed; inset:0; pointer-events:none; z-index:2; overflow:hidden }
-    .heart{ position:absolute; width:18px; height:18px; transform:translate(-50%,-50%); animation: fall linear forwards; }
-    .heart:before{ content:"❤"; font-size:18px; filter: drop-shadow(0 0 8px rgba(255,122,198,.6)); }
-    @keyframes fall{ to{ transform: translate(var(--x), 100vh) rotate(360deg); opacity:0 } }
-
-    .toast{position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:#121732; border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:10px 14px; color:var(--soft); font-size:14px; display:none; z-index:5}
-
-    .tiny{ font-size:12px; opacity:.8; margin-top:10px }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
-  <canvas id="confetti" style="position:fixed; inset:0; z-index:3; pointer-events:none"></canvas>
-  <div class="hearts" id="hearts"></div>
+  <header>
+    <h1>✨ Wife Update vInfinity ✨</h1>
+    <p>For: Simbo Abdulsemed 💖</p>
+  </header>
 
-  <main class="container">
-    <div class="ribbon">🔓 Secret Level Unlocked</div>
-    <h1>Wife Update <span style="color:var(--accent)">vInfinity</span></h1>
-    <p class="subtitle">Congratulations! You scanned a top‑secret QR and deployed 1 new feature: <strong>Endless Love</strong> ❤️</p>
+  <pre>
+Patch Notes:
+- Fixed: Missing hugs on random Tuesdays 🫂
+- Added: Unlimited compliments API ❤️
+- Improved: Longing latency (now 0ms whenever I see you)
+- Feature: Daily “I love you” pop-ups (cannot be disabled)
+- Easter Egg: If you smile → automatic Simbo’s heart explosion 💥
 
-    <section class="card">
-      <h2 style="margin:0 0 8px">Release Notes</h2>
-      <div class="patch" id="patch">
-<pre>
-<span class="k">feat</span>: <span class="v">Added unstoppable smile generator</span>
-<span class="k">perf</span>: <span class="v">Optimized hug latency (now instant)</span>
-<span class="k">sec</span>:  <span class="v">Locked husband. Keyholder: You only</span>
-<span class="k">fix</span>:  <span class="v">Resolved crash caused by excessive beauty</span>
-<span class="k">docs</span>: <span class="v">Updated life manual → Chapter: Team Us</span>
-<span class="k">known‑issue</span>: <span class="v">Love overflow — won’t fix</span>
-</pre>
-      </div>
+Known Issues:
+- Still can’t function well without your presence 🤯
+- Addicted to hearing your laugh 🥰
 
-      <div class="btns">
-        <button id="confettiBtn">Celebrate 🎉</button>
-        <button id="heartsBtn">Make it rain ❤</button>
-        <button id="rewardBtn">Redeem Bonus Gift 🎁</button>
-      </div>
-      <p class="tiny">Tip: You can edit the messages in the HTML file to personalize.</p>
-    </section>
-  </main>
+Developer Note:
+> This update is permanent. Rollbacks are not supported. 
+> Deployed from the galaxy of longing. 🌌
+  </pre>
 
-  <div class="toast" id="toast">🎁 Bonus Gift Redeemed: Dinner Date + Dessert Voucher</div>
+  <div>
+    <button onclick="launchConfetti()">🎉 Celebrate Love</button>
+    <button onclick="rainHearts()">💖 Heart Rain</button>
+    <button onclick="showToast()">🎁 Redeem Gift</button>
+  </div>
+
+  <div id="toast">A surprise date voucher for Simbo 💕</div>
+
+  <canvas id="canvas"></canvas>
 
   <script>
-    // --- Confetti (minimal vanilla)
-    const canvas = document.getElementById('confetti');
-    const ctx = canvas.getContext('2d');
-    let W, H, confetti = [];
-    const colors = ['#ffffff','#ffd1e8','#b8c7ff','#ff7ac6','#a4f4ff'];
-    function resize(){ W = canvas.width = innerWidth; H = canvas.height = innerHeight }
-    addEventListener('resize', resize); resize();
-    function spawn(n=150){
-      for(let i=0;i<n;i++) confetti.push({
-        x: Math.random()*W,
-        y: -20 - Math.random()*H,
-        s: 4+Math.random()*6,
-        v: 1+Math.random()*3,
-        r: Math.random()*Math.PI,
-        c: colors[(Math.random()*colors.length)|0]
-      });
+    // Confetti
+    function launchConfetti() {
+      const duration = 1 * 1000;
+      const end = Date.now() + duration;
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+        });
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
     }
-    function step(){
-      ctx.clearRect(0,0,W,H);
-      confetti.forEach(p=>{
-        p.y += p.v; p.x += Math.sin(p.y/30)*0.8; p.r += 0.05;
-        ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r);
-        ctx.fillStyle = p.c; ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s);
-        ctx.restore();
-      });
-      confetti = confetti.filter(p=>p.y < H+30);
-      requestAnimationFrame(step);
-    }
-    step();
 
-    document.getElementById('confettiBtn').addEventListener('click', ()=>spawn(200));
-
-    // --- Hearts rain
-    const hearts = document.getElementById('hearts');
-    function heartBurst(count=24){
-      for(let i=0;i<count;i++){
-        const h = document.createElement('div'); h.className='heart';
-        const startX = (Math.random()*100)|0; // vw
-        const driftX = (Math.random()*200 - 100)|0; // px
-        h.style.left = startX + 'vw';
-        h.style.top = '-2vh';
-        h.style.setProperty('--x', `calc(${startX}vw + ${driftX}px)`);
-        h.style.animationDuration = (5+Math.random()*3)+'s';
-        hearts.appendChild(h);
-        setTimeout(()=>h.remove(), 8000);
+    // Heart Rain
+    function rainHearts() {
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const hearts = [];
+      for (let i = 0; i < 20; i++) {
+        hearts.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 20 + 10,
+          speed: Math.random() + 0.5,
+        });
       }
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        hearts.forEach((heart) => {
+          ctx.fillStyle = "#ff69b4";
+          ctx.beginPath();
+          ctx.moveTo(heart.x, heart.y);
+          ctx.bezierCurveTo(
+            heart.x - heart.size / 2,
+            heart.y - heart.size / 2,
+            heart.x - heart.size,
+            heart.y + heart.size / 2,
+            heart.x,
+            heart.y + heart.size
+          );
+          ctx.bezierCurveTo(
+            heart.x + heart.size,
+            heart.y + heart.size / 2,
+            heart.x + heart.size / 2,
+            heart.y - heart.size / 2,
+            heart.x,
+            heart.y
+          );
+          ctx.fill();
+          heart.y += heart.speed;
+          if (heart.y > canvas.height) heart.y = -heart.size;
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
     }
-    document.getElementById('heartsBtn').addEventListener('click', ()=>heartBurst());
 
-    // --- Reward toast
-    const toast = document.getElementById('toast');
-    document.getElementById('rewardBtn').addEventListener('click', ()=>{
-      toast.style.display='block';
-      setTimeout(()=>toast.style.display='none', 2600);
-      spawn(120); heartBurst(18);
-    });
+    // Toast Gift
+    function showToast() {
+      const toast = document.getElementById("toast");
+      toast.className = "show";
+      setTimeout(() => (toast.className = toast.className.replace("show", "")), 3000);
+    }
+
+    // Confetti library (minimal)
+    var confetti = (function() {
+      var count = 200,
+        defaults = { origin: { y: 0.7 } };
+      function fire(particleRatio, opts) {
+        var options = Object.assign({}, defaults, opts, {
+          particleCount: Math.floor(count * particleRatio),
+        });
+        window.confetti && window.confetti(options);
+      }
+      return function(opts) {
+        fire(0.25, { spread: 26, startVelocity: 55 });
+        fire(0.2, { spread: 60 });
+        fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+        fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+        fire(0.1, { spread: 120, startVelocity: 45 });
+      };
+    })();
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </body>
 </html>
