@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <title>💻 Wife Update vInfinity 🚀</title>
   <style>
     body {
@@ -12,9 +12,10 @@
       color: #fff;
       text-align: center;
       overflow-x: hidden;
+      padding: 0 1rem;
     }
     header {
-      padding: 2rem;
+      padding: 1.5rem 1rem;
       background: linear-gradient(90deg, #ff69b4, #ffd700);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -25,19 +26,22 @@
       to { text-shadow: 0 0 25px #ffd700; }
     }
     h1 {
-      font-size: 3rem;
+      font-size: 2.2rem;
+      line-height: 1.2;
     }
     pre {
       text-align: left;
-      margin: 2rem auto;
-      max-width: 750px;
-      padding: 1.5rem;
+      margin: 1.5rem auto;
+      max-width: 100%;
+      padding: 1rem;
       background: rgba(255, 255, 255, 0.08);
       border: 2px dashed #ff69b4;
       border-radius: 1.2rem;
-      line-height: 1.6;
-      font-size: 1.05rem;
+      line-height: 1.5;
+      font-size: 0.95rem;
       position: relative;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
     pre::before {
       content: "📜 Release Notes";
@@ -48,38 +52,39 @@
       color: #fff;
       padding: 0.2rem 0.6rem;
       border-radius: 8px;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
     }
     button {
-      margin: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
+      margin: 0.4rem;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.95rem;
       border: none;
-      border-radius: 1rem;
+      border-radius: 0.8rem;
       background: linear-gradient(135deg, #ff69b4, #ff1493);
       color: #fff;
       cursor: pointer;
-      box-shadow: 0 0 10px rgba(255,105,180,0.6);
+      box-shadow: 0 0 8px rgba(255,105,180,0.6);
       transition: transform 0.2s, box-shadow 0.2s;
     }
     button:hover {
-      transform: rotate(-2deg) scale(1.1);
-      box-shadow: 0 0 20px rgba(255,105,180,0.9);
+      transform: scale(1.08);
+      box-shadow: 0 0 14px rgba(255,105,180,0.9);
     }
     #toast {
       visibility: hidden;
-      min-width: 200px;
+      min-width: 160px;
       background-color: #222;
       color: #ffd700;
       text-align: center;
       border-radius: 8px;
-      padding: 1rem;
+      padding: 0.8rem;
       position: fixed;
       z-index: 1;
       left: 50%;
-      bottom: 30px;
+      bottom: 20px;
       transform: translateX(-50%);
       border: 2px solid #ff69b4;
+      font-size: 0.9rem;
     }
     #toast.show {
       visibility: visible;
@@ -87,10 +92,10 @@
     }
     @keyframes fadein {
       from { bottom: 0; opacity: 0; }
-      to { bottom: 30px; opacity: 1; }
+      to { bottom: 20px; opacity: 1; }
     }
     @keyframes fadeout {
-      from { bottom: 30px; opacity: 1; }
+      from { bottom: 20px; opacity: 1; }
       to { bottom: 0; opacity: 0; }
     }
     canvas {
@@ -100,9 +105,16 @@
       pointer-events: none;
     }
     footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
+      margin-top: 2rem;
+      font-size: 0.8rem;
       color: #aaa;
+      padding: 1rem;
+    }
+    @media (min-width: 768px) {
+      h1 { font-size: 3rem; }
+      pre { font-size: 1.05rem; padding: 1.5rem; }
+      button { font-size: 1rem; padding: 0.75rem 1.5rem; }
+      footer { font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -146,7 +158,7 @@ Developer Notes:
   <canvas id="canvas"></canvas>
 
   <footer>
-    <p>© Built with bugs, caffeine(sax🤭), and way too much love❤️. – Simbo’s DevOps 💻</p>
+    <p>© Built with bugs, caffeine, and way too much love. – Simbo’s DevOps 💻</p>
   </footer>
 
   <script>
