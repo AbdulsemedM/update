@@ -3,33 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wife Update vInfinity</title>
+  <title>💻 Wife Update vInfinity 🚀</title>
   <style>
     body {
       margin: 0;
       font-family: "Comic Sans MS", cursive, sans-serif;
-      background: linear-gradient(135deg, #0d0d2b, #1f1f5a);
+      background: radial-gradient(circle at top left, #1a0033, #000);
       color: #fff;
       text-align: center;
       overflow-x: hidden;
     }
     header {
       padding: 2rem;
+      background: linear-gradient(90deg, #ff69b4, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ff69b4; }
+      to { text-shadow: 0 0 25px #ffd700; }
     }
     h1 {
-      font-size: 2.5rem;
-      color: #ffd700;
-      text-shadow: 0 0 10px #ff69b4;
+      font-size: 3rem;
     }
     pre {
       text-align: left;
       margin: 2rem auto;
-      max-width: 700px;
+      max-width: 750px;
       padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px dashed #ff69b4;
+      border-radius: 1.2rem;
       line-height: 1.6;
-      font-size: 1rem;
+      font-size: 1.05rem;
+      position: relative;
+    }
+    pre::before {
+      content: "📜 Release Notes";
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: #ff69b4;
+      color: #fff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
     }
     button {
       margin: 0.5rem;
@@ -37,19 +56,21 @@
       font-size: 1rem;
       border: none;
       border-radius: 1rem;
-      background: #ff69b4;
+      background: linear-gradient(135deg, #ff69b4, #ff1493);
       color: #fff;
       cursor: pointer;
-      transition: transform 0.2s;
+      box-shadow: 0 0 10px rgba(255,105,180,0.6);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     button:hover {
-      transform: scale(1.1);
+      transform: rotate(-2deg) scale(1.1);
+      box-shadow: 0 0 20px rgba(255,105,180,0.9);
     }
     #toast {
       visibility: hidden;
       min-width: 200px;
-      background-color: #333;
-      color: #fff;
+      background-color: #222;
+      color: #ffd700;
       text-align: center;
       border-radius: 8px;
       padding: 1rem;
@@ -58,6 +79,7 @@
       left: 50%;
       bottom: 30px;
       transform: translateX(-50%);
+      border: 2px solid #ff69b4;
     }
     #toast.show {
       visibility: visible;
@@ -77,55 +99,64 @@
       left: 0;
       pointer-events: none;
     }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>✨ Wife Update vInfinity ✨</h1>
-    <p>For: Simbo Abdulsemed 💖</p>
+    <h1>💖 Wife Update vInfinity 🚀</h1>
+    <p>Deployed with love for: <strong>Simbo Abdulsemed</strong></p>
   </header>
 
   <pre>
 Patch Notes:
 - Fixed: Missing hugs on random Tuesdays 🫂
-- Added: Unlimited compliments API ❤️
-- Improved: Longing latency (now 0ms whenever I see you)
-- Feature: Daily “I love you” pop-ups (cannot be disabled)
-- Easter Egg: If you smile → automatic Simbo’s heart explosion 💥
+- Added: Unlimited Compliments API (response time: instant) ❤️
+- Improved: Longing latency → now near quantum teleportation speed ⚡
+- Feature: Daily “I love you” notifications (cannot be muted, sorry not sorry 🥳)
+- Easter Egg: Smiling at this page automatically launches heart fireworks 🎆
 
 Known Issues:
-- Still can’t function well without your presence 🤯
-- Addicted to hearing your laugh 🥰
+- System crash when Simbo’s laugh is absent 🤯
+- Memory leak: I keep replaying your smile in my head 🥰
 
-Developer Note:
-> This update is permanent. Rollbacks are not supported. 
-> Deployed from the galaxy of longing. 🌌
+Developer Notes:
+> This release is FINAL. No uninstall, no rollback.
+> Optimized by sleepless nights of longing + silly coding. 🌌
   </pre>
 
   <div>
-    <button onclick="launchConfetti()">🎉 Celebrate Love</button>
-    <button onclick="rainHearts()">💖 Heart Rain</button>
-    <button onclick="showToast()">🎁 Redeem Gift</button>
+    <button onclick="launchConfetti()">🎉 Deploy Love</button>
+    <button onclick="rainHearts()">💖 Simbo Mode</button>
+    <button onclick="showToast()">🎁 Unlock Surprise</button>
   </div>
 
-  <div id="toast">A surprise date voucher for Simbo 💕</div>
+  <div id="toast">Surprise Unlocked: Eternal Date Nights Voucher 💕</div>
 
   <canvas id="canvas"></canvas>
+
+  <footer>
+    <p>© Built with bugs, caffeine, and way too much love. – Simbo’s DevOps 💻</p>
+  </footer>
 
   <script>
     // Confetti
     function launchConfetti() {
-      const duration = 1 * 1000;
+      const duration = 1.5 * 1000;
       const end = Date.now() + duration;
       (function frame() {
         confetti({
-          particleCount: 5,
+          particleCount: 6,
           angle: 60,
           spread: 55,
           origin: { x: 0 },
         });
         confetti({
-          particleCount: 5,
+          particleCount: 6,
           angle: 120,
           spread: 55,
           origin: { x: 1 },
@@ -143,7 +174,7 @@ Developer Note:
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       const hearts = [];
-      for (let i = 0; i < 20; i++) {
+      for (let i = 0; i < 25; i++) {
         hearts.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
@@ -154,7 +185,7 @@ Developer Note:
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         hearts.forEach((heart) => {
-          ctx.fillStyle = "#ff69b4";
+          ctx.fillStyle = "#ff1493";
           ctx.beginPath();
           ctx.moveTo(heart.x, heart.y);
           ctx.bezierCurveTo(
